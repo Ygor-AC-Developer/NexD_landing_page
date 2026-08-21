@@ -1,0 +1,517 @@
+---
+const whatsappUrl = "https://wa.me/55SEU_NUMERO";
+---
+
+<section id="inicio" class="hero">
+  <!-- Fundo decorativo -->
+  <div class="hero-bg" aria-hidden="true">
+    <div class="glow glow-left"></div>
+    <div class="glow glow-right"></div>
+    <div class="grid-lines"></div>
+  </div>
+
+  <div class="container hero-inner">
+    <!-- Texto principal -->
+    <div class="hero-content">
+      <span class="hero-tag">Soluções digitais completas</span>
+
+      <h1>
+        Tecnologia que
+        <span class="highlight">conecta pessoas</span>
+        e transforma negócios
+      </h1>
+
+      <p class="hero-subtitle">
+        Da memória que emociona ao processo que escala — a Nexspire resolve os
+        dois com tecnologia sob medida.
+      </p>
+
+      <!-- Dois CTAs -->
+      <div class="hero-ctas">
+        <a
+          href="https://www.nexd.me"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            aria-hidden="true"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            ></path>
+          </svg>
+          Quero criar um presente digital
+        </a>
+
+        <a href="#automacao" class="btn btn-outline">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.5"
+            aria-hidden="true"
+          >
+            <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
+            ></polyline>
+          </svg>
+          Quero automatizar meu negócio
+        </a>
+      </div>
+
+      <!-- Números rápidos -->
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>1.250<span class="neon">+</span></strong>
+          <span>memórias criadas</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <strong>5,0<span class="neon">★</span></strong>
+          <span>avaliação média</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat">
+          <strong>2<span class="neon">+</span></strong>
+          <span>soluções digitais</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual CSS -->
+    <div class="hero-visual" aria-hidden="true">
+      <div class="visual-card card-top">
+        <div class="card-icon">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+            ></path>
+          </svg>
+        </div>
+        <div class="card-text">
+          <strong>Presente Digital</strong>
+          <span>NexD Memories</span>
+        </div>
+        <div class="card-badge">Novo</div>
+      </div>
+
+      <div class="visual-orb"></div>
+
+      <div class="visual-card card-bottom">
+        <div class="card-icon">
+          <svg
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"
+            ></polyline>
+          </svg>
+        </div>
+        <div class="card-text">
+          <strong>Automação</strong>
+          <span>Para qualquer porte</span>
+        </div>
+        <div class="card-badge">Sob medida</div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span></span>
+    </div>
+
+    <style>
+      .hero {
+        position: relative;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-block: calc(72px + 4rem) 4rem;
+        overflow: hidden;
+      }
+
+      /* ── Fundo ── */
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .glow {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        filter: blur(120px);
+        opacity: 0.18;
+      }
+
+      .glow-left {
+        background: var(--neon);
+        top: -100px;
+        left: -200px;
+      }
+
+      .glow-right {
+        background: #0055ff;
+        bottom: -100px;
+        right: -200px;
+      }
+
+      .grid-lines {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(0, 200, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 200, 255, 0.04) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(
+          ellipse at center,
+          black 20%,
+          transparent 80%
+        );
+      }
+
+      /* ── Layout ── */
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 4rem;
+      }
+
+      /* ── Conteúdo ── */
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--neon);
+        background: var(--neon-dim);
+        border: 1px solid var(--border);
+        padding: 0.35rem 0.85rem;
+        border-radius: 100px;
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        margin-bottom: 1.5rem;
+      }
+
+      .highlight {
+        color: var(--neon);
+        position: relative;
+        display: inline-block;
+      }
+
+      .highlight::after {
+        content: "";
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--neon);
+        opacity: 0.4;
+        border-radius: 2px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--text-muted);
+        max-width: 480px;
+        margin-bottom: 2.5rem;
+      }
+
+      /* ── CTAs ── */
+      .hero-ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 3rem;
+      }
+
+      /* ── Stats ── */
+      .hero-stats {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .stat {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .stat strong {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .stat span {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+
+      .stat-divider {
+        width: 1px;
+        height: 36px;
+        background: var(--border);
+        flex-shrink: 0;
+      }
+
+      /* ── Visual CSS ── */
+      .hero-visual {
+        position: relative;
+        height: 420px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .visual-orb {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 35% 35%,
+          rgba(0, 200, 255, 0.25),
+          rgba(0, 85, 255, 0.08)
+        );
+        border: 1px solid var(--border);
+        box-shadow:
+          0 0 60px rgba(0, 200, 255, 0.12),
+          inset 0 0 40px rgba(0, 200, 255, 0.06);
+        animation: pulse 4s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+          box-shadow:
+            0 0 60px rgba(0, 200, 255, 0.12),
+            inset 0 0 40px rgba(0, 200, 255, 0.06);
+        }
+        50% {
+          transform: scale(1.04);
+          box-shadow:
+            0 0 90px rgba(0, 200, 255, 0.22),
+            inset 0 0 60px rgba(0, 200, 255, 0.1);
+        }
+      }
+
+      .visual-card {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 0.9rem 1.1rem;
+        min-width: 210px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+      }
+
+      .card-top {
+        top: 30px;
+        right: 0;
+        animation: float-a 5s ease-in-out infinite;
+      }
+
+      .card-bottom {
+        bottom: 30px;
+        left: 0;
+        animation: float-b 5s ease-in-out infinite;
+      }
+
+      @keyframes float-a {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @keyframes float-b {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(10px);
+        }
+      }
+
+      .card-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: var(--radius-sm);
+        background: var(--neon-dim);
+        border: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--neon);
+        flex-shrink: 0;
+      }
+
+      .card-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15rem;
+        flex: 1;
+      }
+
+      .card-text strong {
+        font-family: var(--font-display);
+        font-size: 0.9rem;
+        color: var(--text);
+      }
+
+      .card-text span {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+      }
+
+      .card-badge {
+        font-size: 0.68rem;
+        font-weight: 700;
+        color: var(--neon);
+        background: var(--neon-dim);
+        border: 1px solid var(--border);
+        padding: 0.2rem 0.5rem;
+        border-radius: 100px;
+        white-space: nowrap;
+      }
+
+      /* ── Scroll indicator ── */
+      .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
+      }
+
+      .scroll-indicator span {
+        display: block;
+        width: 22px;
+        height: 36px;
+        border: 2px solid var(--border);
+        border-radius: 100px;
+        position: relative;
+      }
+
+      .scroll-indicator span::after {
+        content: "";
+        position: absolute;
+        top: 6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 8px;
+        background: var(--neon);
+        border-radius: 2px;
+        animation: scroll-dot 2s ease-in-out infinite;
+      }
+
+      @keyframes scroll-dot {
+        0% {
+          top: 6px;
+          opacity: 1;
+        }
+        80% {
+          top: 18px;
+          opacity: 0;
+        }
+        100% {
+          top: 6px;
+          opacity: 0;
+        }
+      }
+
+      /* ── Responsivo ── */
+      @media (max-width: 900px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .hero-subtitle {
+          margin-inline: auto;
+        }
+        .hero-ctas {
+          justify-content: center;
+        }
+        .hero-stats {
+          justify-content: center;
+        }
+        .highlight::after {
+          display: none;
+        }
+        .hero-visual {
+          height: 280px;
+        }
+
+        .card-top {
+          top: 10px;
+          right: 10px;
+          min-width: 180px;
+        }
+        .card-bottom {
+          bottom: 10px;
+          left: 10px;
+          min-width: 180px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-ctas {
+          flex-direction: column;
+        }
+        .btn {
+          width: 100%;
+          justify-content: center;
+        }
+        .hero-visual {
+          display: none;
+        }
+      }
+    </style>
+  </div>
+</section>

@@ -1,1 +1,145 @@
-@import "tailwindcss";
+/* ── Tokens ─────────────────────────────────────── */
+:root {
+  --bg: #050e1d;
+  --bg-card: #0d1f3c;
+  --neon: #00c8ff;
+  --neon-dim: rgba(0, 200, 255, 0.12);
+  --text: #f0f6ff;
+  --text-muted: #94a3b8;
+  --border: rgba(0, 200, 255, 0.15);
+
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --section-pad: clamp(4rem, 10vw, 8rem);
+  --container: min(1160px, 100% - 3rem);
+}
+
+/* ── Reset ──────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Tipografia base ─────────────────────────────── */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+}
+h3 {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+}
+
+p {
+  color: var(--text-muted);
+}
+
+a {
+  color: var(--neon);
+  text-decoration: none;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+/* ── Utilitários globais ─────────────────────────── */
+.container {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-pad);
+}
+
+.neon {
+  color: var(--neon);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--neon);
+  color: var(--bg);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--neon);
+  border: 1.5px solid var(--neon);
+}
+
+/* ── Acessibilidade ──────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--neon);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
