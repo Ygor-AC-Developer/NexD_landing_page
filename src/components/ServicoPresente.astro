@@ -1,0 +1,305 @@
+---
+// src/components/ServicoPresente.astro
+const features = [
+  {
+    title: "Página exclusiva",
+    desc: "Fotos, vídeos e uma mensagem só sua, num link personalizado.",
+  },
+  {
+    title: "QR Code físico",
+    desc: "Um cartão ou plaquinha com QR — a ponte entre o físico e o digital.",
+  },
+  {
+    title: "Pronto em minutos",
+    desc: "Sem app, sem instalação. É só enviar o link ou escanear o código.",
+  },
+];
+---
+
+<section id="presente" class="servico-presente section">
+  <div class="container servico-inner">
+    <!-- Visual -->
+    <div class="servico-visual" aria-hidden="true">
+      <div class="phone-mock">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="screen-glow"></div>
+          <div class="screen-photo"></div>
+          <div class="screen-line short"></div>
+          <div class="screen-line"></div>
+        </div>
+      </div>
+      <div class="qr-chip">
+        <svg
+          width="26"
+          height="26"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+          <path d="M14 14h3v3h-3zM18 18h3v3h-3zM14 21h3M21 14v3"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="servico-content">
+      <span class="servico-tag">NexD Memories</span>
+      <h2>
+        Um presente que <span class="highlight">guarda memórias</span>, não
+        poeira
+      </h2>
+      <p class="servico-text">
+        Transforme fotos, vídeos e mensagens em uma experiência digital que a
+        pessoa carrega para sempre. Ideal para casamentos, aniversários, datas
+        especiais ou qualquer momento que mereça ser lembrado.
+      </p>
+
+      <ul class="servico-features">
+        {
+          features.map((f) => (
+            <li>
+              <span class="feature-check">✓</span>
+              <div>
+                <strong>{f.title}</strong>
+                <span>{f.desc}</span>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+
+      <a
+        href="https://www.nexd.me"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Criar meu presente digital
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .servico-presente {
+    position: relative;
+  }
+
+  .servico-inner {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  /* ── Conteúdo ── */
+  .servico-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--neon);
+    background: var(--neon-dim);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+  }
+
+  h2 {
+    margin-bottom: 1.25rem;
+  }
+
+  .highlight {
+    color: var(--neon);
+  }
+
+  .servico-text {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: 480px;
+    margin-bottom: 2rem;
+  }
+
+  .servico-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .servico-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .feature-check {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--neon-dim);
+    border: 1px solid var(--border);
+    color: var(--neon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 0.15rem;
+  }
+
+  .servico-features strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.98rem;
+    color: var(--text);
+    margin-bottom: 0.15rem;
+  }
+
+  .servico-features span {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  /* ── Visual ── */
+  .servico-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 460px;
+  }
+
+  .phone-mock {
+    width: 230px;
+    height: 440px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 32px;
+    padding: 14px;
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.4),
+      0 0 60px rgba(0, 200, 255, 0.08);
+    position: relative;
+  }
+
+  .phone-notch {
+    width: 60px;
+    height: 6px;
+    background: var(--border);
+    border-radius: 100px;
+    margin: 0 auto 12px;
+  }
+
+  .phone-screen {
+    height: calc(100% - 30px);
+    border-radius: 20px;
+    background: linear-gradient(180deg, #0a1830 0%, #050e1d 100%);
+    border: 1px solid var(--border);
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .screen-glow {
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: var(--neon);
+    filter: blur(60px);
+    opacity: 0.25;
+  }
+
+  .screen-photo {
+    height: 55%;
+    border-radius: 14px;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 200, 255, 0.25),
+      rgba(0, 85, 255, 0.15)
+    );
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+  }
+
+  .screen-line {
+    height: 8px;
+    border-radius: 100px;
+    background: var(--border);
+    margin-bottom: 0.6rem;
+    width: 100%;
+  }
+
+  .screen-line.short {
+    width: 65%;
+  }
+
+  .qr-chip {
+    position: absolute;
+    bottom: 30px;
+    left: -10px;
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    animation: float-qr 5s ease-in-out infinite;
+  }
+
+  @keyframes float-qr {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* ── Responsivo ── */
+  @media (max-width: 900px) {
+    .servico-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 3rem;
+    }
+
+    .servico-text {
+      margin-inline: auto;
+    }
+
+    .servico-features {
+      text-align: left;
+      max-width: 420px;
+      margin-inline: auto;
+      margin-bottom: 2rem;
+    }
+
+    .servico-visual {
+      height: 380px;
+      order: -1;
+    }
+
+    .phone-mock {
+      width: 190px;
+      height: 360px;
+    }
+  }
+</style>
