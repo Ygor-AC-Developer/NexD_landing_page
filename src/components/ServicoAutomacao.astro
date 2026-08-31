@@ -1,0 +1,381 @@
+---
+// src/components/ServicoAutomacao.astro
+const features = [
+  {
+    title: "Atendimento 24/7",
+    desc: "Bots inteligentes respondem, qualificam e encaminham leads sem parar.",
+  },
+  {
+    title: "Fluxos sob medida",
+    desc: "Integrações com WhatsApp, CRM, planilhas e as ferramentas que você já usa.",
+  },
+  {
+    title: "Escala sem esforço",
+    desc: "Automatize tarefas repetitivas e libere seu time para o que importa.",
+  },
+];
+---
+
+<section id="automacao" class="servico-automacao section">
+  <div class="container automacao-inner">
+    <!-- Conteúdo -->
+    <div class="automacao-content">
+      <span class="automacao-tag">Automação Inteligente</span>
+      <h2>
+        Processos que <span class="highlight">rodam sozinhos</span>, enquanto
+        você cresce
+      </h2>
+      <p class="automacao-text">
+        Conectamos suas ferramentas e automatizamos o que consome tempo do seu
+        time — do primeiro contato ao pós-venda. Menos tarefas manuais, mais
+        negócio fechado.
+      </p>
+
+      <ul class="automacao-features">
+        {
+          features.map((f) => (
+            <li>
+              <span class="feature-check">✓</span>
+              <div>
+                <strong>{f.title}</strong>
+                <span>{f.desc}</span>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+
+      <a href="#contato" class="btn btn-primary">
+        Quero automatizar meu negócio
+      </a>
+    </div>
+
+    <!-- Visual -->
+    <div class="automacao-visual" aria-hidden="true">
+      <div class="flow-mock">
+        <div class="flow-node node-start">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+            ></path>
+          </svg>
+          <span>Mensagem recebida</span>
+        </div>
+
+        <div class="flow-connector"></div>
+
+        <div class="flow-node node-mid">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+              d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"
+            ></path>
+          </svg>
+          <span>Fluxo automatizado</span>
+        </div>
+
+        <div class="flow-connector"></div>
+
+        <div class="flow-node node-end">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          <span>Cliente atendido</span>
+        </div>
+
+        <div class="flow-glow"></div>
+      </div>
+
+      <div class="automation-chip">
+        <svg
+          width="26"
+          height="26"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .servico-automacao {
+    position: relative;
+  }
+
+  .automacao-inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  /* ── Conteúdo ── */
+  .automacao-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--neon);
+    background: var(--neon-dim);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+  }
+
+  h2 {
+    margin-bottom: 1.25rem;
+  }
+
+  .highlight {
+    color: var(--neon);
+  }
+
+  .automacao-text {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: 480px;
+    margin-bottom: 2rem;
+  }
+
+  .automacao-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .automacao-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .feature-check {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--neon-dim);
+    border: 1px solid var(--border);
+    color: var(--neon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-top: 0.15rem;
+  }
+
+  .automacao-features strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.98rem;
+    color: var(--text);
+    margin-bottom: 0.15rem;
+  }
+
+  .automacao-features span {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+  }
+
+  /* ── Visual ── */
+  .automacao-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 460px;
+  }
+
+  .flow-mock {
+    position: relative;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.5rem;
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.4),
+      0 0 60px rgba(0, 200, 255, 0.08);
+    overflow: hidden;
+  }
+
+  .flow-glow {
+    position: absolute;
+    top: -60px;
+    left: -60px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: var(--neon);
+    filter: blur(70px);
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  .flow-node {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(180deg, #0a1830 0%, #050e1d 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 1rem;
+    color: var(--neon);
+  }
+
+  .flow-node span {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text);
+    font-family: var(--font-display);
+  }
+
+  .flow-connector {
+    position: relative;
+    z-index: 1;
+    width: 2px;
+    height: 28px;
+    background: var(--border);
+    margin: 0.2rem 0;
+  }
+
+  .flow-connector::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--neon);
+    box-shadow: 0 0 8px var(--neon);
+    animation: flow-dot 2.4s ease-in-out infinite;
+  }
+
+  .node-mid {
+    animation: pulse-node 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-node {
+    0%,
+    100% {
+      box-shadow: none;
+    }
+    50% {
+      box-shadow: 0 0 24px rgba(0, 200, 255, 0.18);
+    }
+  }
+
+  @keyframes flow-dot {
+    0% {
+      top: 0;
+      opacity: 0;
+    }
+    15% {
+      opacity: 1;
+    }
+    85% {
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+
+  .automation-chip {
+    position: absolute;
+    top: 20px;
+    right: -10px;
+    width: 64px;
+    height: 64px;
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    animation: float-chip 5s ease-in-out infinite;
+  }
+
+  @keyframes float-chip {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* ── Responsivo ── */
+  @media (max-width: 900px) {
+    .automacao-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 3rem;
+    }
+
+    .automacao-text {
+      margin-inline: auto;
+    }
+
+    .automacao-features {
+      text-align: left;
+      max-width: 420px;
+      margin-inline: auto;
+      margin-bottom: 2rem;
+    }
+
+    .automacao-visual {
+      height: 380px;
+      order: -1;
+    }
+
+    .flow-mock {
+      width: 230px;
+      padding: 1.5rem 1rem;
+    }
+  }
+</style>
