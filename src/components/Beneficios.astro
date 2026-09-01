@@ -1,0 +1,158 @@
+---
+// src/components/Beneficios.astro
+const diferenciais = [
+  {
+    title: "Emoção e eficiência, na mesma casa",
+    desc: "A maioria das agências escolhe um lado: ou é sensível, ou é técnica. A Nexspire projeta memórias que emocionam e sistemas que funcionam — com o mesmo cuidado.",
+  },
+  {
+    title: "No ar em dias, não em meses",
+    desc: "Presentes digitais ficam prontos em minutos. Automações entram em produção em poucos dias úteis, sem processos de agência tradicional.",
+  },
+  {
+    title: "Sob medida, sempre",
+    desc: "Nada de templates genéricos revendidos com nome trocado. Cada projeto nasce do que o seu momento ou o seu negócio realmente precisa.",
+  },
+  {
+    title: "Um time acompanhando, não um bot",
+    desc: "Da primeira conversa ao pós-entrega, você fala com quem construiu a solução — e continua falando depois que ela está no ar.",
+  },
+];
+---
+
+<section id="diferenciais" class="beneficios section">
+  <div class="container beneficios-inner">
+    <!-- Bloco de destaque -->
+    <div class="beneficios-lead">
+      <span class="beneficios-tag">Por que a Nexspire</span>
+      <h2>Duas frentes, um único padrão de cuidado</h2>
+      <p class="beneficios-lead-text">
+        Memória ou processo, o critério é o mesmo: fazer bem-feito, entregar
+        rápido e ficar por perto depois.
+      </p>
+    </div>
+
+    <!-- Lista de diferenciais -->
+    <ul class="beneficios-list">
+      {
+        diferenciais.map((item, i) => (
+          <li class="beneficios-item" style={`--i:${i}`}>
+            <span class="item-index">{String(i + 1).padStart(2, "0")}</span>
+            <div class="item-body">
+              <strong>{item.title}</strong>
+              <p>{item.desc}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .beneficios {
+    position: relative;
+  }
+
+  .beneficios-inner {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  /* ── Bloco de destaque ── */
+  .beneficios-lead {
+    position: sticky;
+    top: 7rem;
+  }
+
+  .beneficios-tag {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--neon);
+    background: var(--neon-dim);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.85rem;
+    border-radius: 100px;
+    margin-bottom: 1.25rem;
+  }
+
+  .beneficios-lead h2 {
+    margin-bottom: 1.25rem;
+  }
+
+  .beneficios-lead-text {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    max-width: 340px;
+  }
+
+  /* ── Lista ── */
+  .beneficios-list {
+    list-style: none;
+  }
+
+  .beneficios-item {
+    display: flex;
+    gap: 1.75rem;
+    padding-block: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .beneficios-item:last-child {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .item-index {
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--neon);
+    padding-top: 0.15rem;
+  }
+
+  .item-body strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .item-body p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 480px;
+  }
+
+  /* ── Responsivo ── */
+  @media (max-width: 900px) {
+    .beneficios-inner {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .beneficios-lead {
+      position: static;
+      text-align: center;
+    }
+
+    .beneficios-lead-text {
+      margin-inline: auto;
+      max-width: 420px;
+    }
+
+    .beneficios-item {
+      gap: 1.25rem;
+    }
+
+    .item-body p {
+      max-width: none;
+    }
+  }
+</style>
